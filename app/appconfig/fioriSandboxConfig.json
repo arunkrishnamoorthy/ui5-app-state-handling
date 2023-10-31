@@ -1,0 +1,88 @@
+{
+    "services": {
+      "LaunchPage": {
+        "adapter": {
+          "config": {
+            "catalogs": [],
+            "groups": [
+              {
+                "id": "timesheet",
+                "title": "Manage Timesheet",
+                "isPreset": true,
+                "isVisible": true,
+                "isGroupLocked": false,
+                "tiles": [
+                  {
+                    "id": "Dynamic",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "Manage Timesheet",
+                      "targetURL": "#timesheet-manage"
+                    }
+                  },
+                  {
+                    "id": "Dynamic",
+                    "tileType": "sap.ushell.ui.tile.StaticTile",
+                    "properties": {
+                      "title": "My Timesheet",
+                      "targetURL": "#timesheet-self"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "NavTargetResolution": {
+        "config": {
+          "enableClientSideTargetResolution": true
+        }
+      },
+      "Container":{
+        "adapter": {
+          "config":{
+            "id": "CHARANRAJ_THARIGONDA",
+            "firstName": "Charanraj",
+            "lastName": "Tharigonda",
+            "fullName": "Charanraj Tharigonda",
+            "email": "Charanraj.Tharigonda@sposea.com" 
+          }
+        }
+      },
+      "ClientSideTargetResolution": {
+        "adapter": {
+          "config": {
+            "inbounds": {
+              "managetimesheet": {
+                "semanticObject": "timesheet",
+                "action": "manage",
+                "signature": {
+                  "parameters": {},
+                  "additionalParameters": "allowed"
+                },
+                "resolutionResult": {
+                  "applicationType": "SAPUI5",
+                  "additionalInformation": "SAPUI5.Component=project1",
+                  "url": "/project1/webapp"
+                }
+              },
+              "mytimesheet" : {
+                "semanticObject": "timesheet",
+                "action": "self",
+                "signature": {
+                  "parameters": {},
+                  "additionalParameters": "allowed"
+                },
+                "resolutionResult": {
+                  "applicationType": "SAPUI5",
+                  "additionalInformation": "SAPUI5.Component=project2",
+                  "url": "/project2/webapp"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
